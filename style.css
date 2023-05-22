@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(82, 82, 82);
+}
+
+#button {
+    width: 100%;
+    height:700px;
+    border-radius: 250px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+}
+
+#button.running {
+    background-color: red;
+}
+
+#button.stopped {
+    background-color: green;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    text-align: center;
+    color: white;
+    margin: 30px;
+}
+
+.dollars {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200px;
+    text-align: center;
+    margin: 30px;
+    color: white;
+}
+
+.spacer {
+    height: 100px;
+}

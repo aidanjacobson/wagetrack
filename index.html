@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="script.js"></script>
+        <title>WageTrack</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="https://banner2.cleanpng.com/20180518/izq/kisspng-dollar-sign-computer-icons-clip-art-5aff1ad30087f6.5192773215266679870022.jpg" />
+    </head>
+    <body>
+        <div class="spacer"></div>
+        <div id="button" class="stopped" onclick="toggle()">Start</div>
+        <br><br><br>
+        <div>
+            <p class="text">You have earned:</p>
+            <p class="dollars" id="dollarAmount">$0</p>
+            <p class="text">so far today.</p>
+        </div>
+        <div class="spacer"></div>
+        <div onclick="changeWage()">
+            <p class="text">Your hourly wage is:</p>
+            <p class="dollars" id="wageAmount">$0</p>
+            <p class="text">(click to change)</p>
+        </div>
+    </body>
+</html>
