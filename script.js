@@ -83,12 +83,37 @@ function doStartupCheck() {
 }
 
 function changeWage() {
-    config.hourlyWage = +(prompt("Enter your new hourly pay:", roundCents(config.hourlyWage)));
-    saveConfig()
+    var restart = false;
+    if (config.running) {
+        restart = true;
+        toggle();
+    }
+    var newWage = +roundCents(prompt("Enter your new hourly pay:", roundCents(config.hourlyWage)));
+    var multiplier = config.hourlyWage/newWage;
+    config.hourlyWage = newWage;
+    console.log(multiplier);
+    config.preStartTotal *= multiplier;
+
+    if (restart) toggle();
+    saveConfig();
 }
 
 function reset() {
     config.running = false;
     config.lastTap = 0;
     config.preStartTotal = 0;
+}
+
+function changeAmount() {
+    var restart = false;
+    if (config.running) {
+        restart = true;
+        toggle();
+    }
+    var newAmount = prompt("Enter new dollar amount:", roundCents(calculatePayment()));
+    var hours = newAmount / config.hourlyWage;
+    config.preStartTotal = hours;
+    config.lastTap = Date.now();
+    if (restart) toggle();
+    saveConfig();
 }
