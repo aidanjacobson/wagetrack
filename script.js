@@ -111,6 +111,9 @@ function changeAmount() {
         toggle();
     }
     var newAmount = prompt("Enter new dollar amount:", roundCents(calculatePayment()));
+    if (newAmount === null) {
+      newAmount = config.hourlyWage;
+    }
     var hours = newAmount / config.hourlyWage;
     config.preStartTotal = hours;
     config.lastTap = Date.now();
